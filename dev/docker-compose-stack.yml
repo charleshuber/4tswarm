@@ -47,8 +47,6 @@ services:
        - 4trest
      image: charleshuber/4tfront
      command: ["./wait-tomcat.sh", "4trest", "8080", "/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
-     volumes:
-       - dist:/var/www/html
      ports:
        - "80:80"
        - "443:443"
