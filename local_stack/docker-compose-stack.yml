@@ -25,7 +25,7 @@ services:
      image: tomcat2
      command: ["./wait-mysql.sh", "4tmysql", "3306", "catalina.sh", "jpda", "run"]
      volumes:
-       - /home/charles/dockervolumes/tomcat85webapps:/usr/local/tomcat/webapps
+       - /home/charles/workspaces/surfthevoid/4t/4trest/git-project/4trest/sources/business-rest/target:/usr/local/tomcat/webapps
      ports:
        - "8080:8080"
        - "8000:8000"
