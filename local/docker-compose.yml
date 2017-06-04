@@ -37,7 +37,7 @@ services:
        MYSQL_USER: tatoutontan
        MYSQL_PASSWORD: pwd44t
 
-   4tclient:
+   4tfront:
      depends_on:
        - 4trest
      build:
@@ -48,7 +48,7 @@ services:
      volumes:
        - /home/charles/workspaces/surfthevoid/4t/4tfront/git-project/4tfront/sources/dist:/var/www/html
      ports:
-       - "80:80"
+       - "90:80"
        - "443:443"
      restart: always
 
