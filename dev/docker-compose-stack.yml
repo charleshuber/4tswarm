@@ -42,7 +42,7 @@ services:
        placement:
          constraints: [node.role == manager]
      
-   4tclient:
+   4tfront:
      depends_on:
        - 4trest
      image: charleshuber/4tfront
