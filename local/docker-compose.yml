@@ -2,7 +2,9 @@ version: '3'
 
 services:
    4tmysql:
-     image: mysql:5.7
+     build:
+       context: .
+       dockerfile: mysql-dockerfile   
      volumes:
        - db_data:/var/lib/mysql
      restart: always
@@ -10,7 +12,10 @@ services:
        MYSQL_ROOT_PASSWORD: pwd4root 
        MYSQL_DATABASE: 4tDB 
        MYSQL_USER: tatoutontan 
-       MYSQL_PASSWORD: pwd44t 
+       MYSQL_PASSWORD: pwd44t
+       ROOT_APP_USER: yoman
+       ROOT_APP_PWD: yomanapp
+       REALM_NAME: 4tREALM 
 
    4trest:
      depends_on:
@@ -36,6 +41,7 @@ services:
        MYSQL_DB_NAME: 4tDB
        MYSQL_USER: tatoutontan
        MYSQL_PASSWORD: pwd44t
+       REALM_NAME: 4tREALM
 
    4tfront:
      depends_on:
